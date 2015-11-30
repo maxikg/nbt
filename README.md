@@ -1,4 +1,4 @@
-# NBT
+# NBT [![Build Status](https://travis-ci.org/maxikg/nbt.svg)](https://travis-ci.org/maxikg/nbt)
 
 The NBT (Named Binary Tag) format is used in the game Minecraft for storing different information. This library allows
 you to read and write those nbt data. The reader/writer mechanisms allows you to implement your own data sources (e.g.
