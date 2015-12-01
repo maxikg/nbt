@@ -176,6 +176,16 @@ public abstract class AbstractNbtWriter implements NbtWriter {
     }
 
     @Override
+    public NbtWriter writeLength(int length) {
+        try {
+            doWriteInt(length);
+        } catch (Throwable throwable) {
+            throw Throwables.propagate(throwable);
+        }
+        return this;
+    }
+
+    @Override
     public NbtWriter writeListStart(String name, NbtType type, int length) {
         writeType(NbtType.TAG_LIST);
         writeName(name);
@@ -186,11 +196,7 @@ public abstract class AbstractNbtWriter implements NbtWriter {
     @Override
     public NbtWriter writeListStart(NbtType type, int length) {
         writeType(type);
-        try {
-            doWriteInt(length);
-        } catch (Throwable throwable) {
-            throw Throwables.propagate(throwable);
-        }
+        writeLength(length);
         return this;
     }
 

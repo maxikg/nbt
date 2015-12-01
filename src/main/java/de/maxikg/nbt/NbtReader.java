@@ -10,6 +10,10 @@ public interface NbtReader {
 
     String readName();
 
+    int readLength();
+
+    int getRemainingLength();
+
     byte readByte();
 
     short readShort();

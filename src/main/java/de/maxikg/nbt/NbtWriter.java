@@ -40,6 +40,8 @@ public interface NbtWriter {
 
     NbtWriter writeString(String name, String value);
 
+    NbtWriter writeLength(int length);
+
     NbtWriter writeListStart(NbtType type, int length);
 
     NbtWriter writeListStart(String name, NbtType type, int length);

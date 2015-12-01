@@ -6,6 +6,7 @@ public abstract class AbstractNbtReader implements NbtReader {
 
     private NbtType currentType;
     private String currentName;
+    private int length;
 
     @Override
     public NbtType getCurrentNbtType() {
@@ -35,6 +36,21 @@ public abstract class AbstractNbtReader implements NbtReader {
             throw Throwables.propagate(throwable);
         }
         return currentName;
+    }
+
+    @Override
+    public int readLength() {
+        try {
+            length = doReadInt();
+        } catch (Throwable throwable) {
+            throw Throwables.propagate(throwable);
+        }
+        return length;
+    }
+
+    @Override
+    public int getRemainingLength() {
+        return length;
     }
 
     @Override
