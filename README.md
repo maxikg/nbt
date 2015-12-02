@@ -9,5 +9,6 @@ More information about the NBT format can be found here: [http://wiki.vg/NBT](ht
 ## ToDo
 
  * Save states to ensure a nbt file is read and written correctly
+ * Add container
  * Add javadocs
  * Unit test all the things
